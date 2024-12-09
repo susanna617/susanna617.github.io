@@ -68,7 +68,6 @@ nav .nav-btn.active::after {
 
 footer {
     margin-top: 50px;
-    padding-top: 30px;
     height: 50vh;
 }
 
@@ -152,7 +151,7 @@ footer .contact{
     min-width: auto;
     min-height: auto;
     width: 100vw;
-    height: 100vh;
+    height: 103vh;
     pointer-events: none; /* Make the SVG non-interactive */
     z-index: -1;
     background-size: 100vh, 100vw;
@@ -206,34 +205,7 @@ footer .contact{
     margin-bottom: 16vh;
 }
 
-.scroll-text {
-    
-    opacity: 1;
-    transition: opacity 0.5s ease-out;
-}
 
-.scroll-indicator {
-    padding-top: 10px;
-    display: block;
-    font-size: 1.15rem;
-    animation: bump 1.3s infinite ease-in-out;
-    opacity: 1;
-    transition: opacity 0.5s ease-out;
-}
-
-.scroll-indicator.hidden {
-    opacity: 0;
-}
-
-/* Bumping animation */
-@keyframes bump {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-6px);
-    }
-}
 
 .intro h1 {
     font-size: 3.5rem;
@@ -252,53 +224,11 @@ footer .contact{
     font-style: italic;
 }
 
-.works {
-    margin-top: 100px;
-    padding-top: 0px;
-    padding: 20px;
-}
-
-.works-frame {
-    position: absolute;
-    display:block;
-    padding-top: 10px;
-    min-width: auto;
-    min-height: auto;
-    width: 100vw;
-    height: auto;
-    pointer-events: none; /* Make the SVG non-interactive */
-    z-index: -1;
-    background-size: 100vh, 100vw;
-}
-
-.works h2 {
-    font-size: 4em;
-    margin-top: 20px;
-    margin-bottom: 120px;
-    text-align: center;
+.intro a {
     color: #01204e;
-    font-family: "Abril FatFace", serif;
 }
 
-.tiles {
-    display: flex;
-    margin-top: 50px;
-    gap: 90px;
-    justify-content: space-between;
-    flex-direction:column;
-    vertical-align: top;
-}
 
-.tile {
-    position: relative;
-    overflow: hidden;
-    margin: 0px 30px;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-
-}
 
 .individual-fade-in {
     -webkit-transform: translateY(70px) translateZ(0);
@@ -349,12 +279,6 @@ footer .contact{
     transition: transform 0.3s ease; /* Smooth zoom transition */
   }
 
-.tile-1 {
-    margin-right: 5px;
-}
-.tile-4 {
-    margin-left: 0px;
-  }
   
   /* Add text overlay */
   .overlay {
@@ -380,63 +304,7 @@ footer .contact{
     font-weight: bold;
   }
   
-  /* Hover effects */
-  .tile-wrapper:hover .image {
-    transform: scale(1.1); /* Zoom the image */
-  }
-  
-  .tile-wrapper:hover .overlay {
-    opacity: 1; /* Show the overlay with the text */
-  }
 
-
-
-.tile:nth-child(odd) {
-    flex-direction: row; /* Left-aligned for odd tiles */
-}
-
-.tile:nth-child(even) {
-    flex-direction: row-reverse; /* Right-aligned for even tiles */
-}
-
-
-.tile-text {
-    max-width: 40%;
-    padding-top: -50px;
-    padding: 20px;
-    padding-top: -50px;
-    text-align: left;
-    font-size: 1rem;
-    padding-top: 0px;
-    margin-top: 0px;
-}
-
-.t1 {
-    margin-left: -5px;
-}
-
-.t2 {
-    margin-left: -10px;
-}
-.t3 {
-    max-width:38%;
-}
-
-.t4 {
-    margin-right: 100px;
-}
-
-.tile-text h3 {
-    margin-top: 0px;
-    font-size: 1.8rem;
-    font-family: "DM Serif Text", serif;
-}
-
-.tile-text p {
-    font-size: 1.3rem;
-    line-height: 2em;
-    font-family: "DM Serif Text", serif;
-}
 
 /* Fade-in Animations */
 .fade-in {
