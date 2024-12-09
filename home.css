@@ -1,0 +1,352 @@
+/* General Styles */
+body {
+
+    margin: 0;
+    padding: 0;
+    background-color: #f5f0e7;
+    color: #333;
+}
+
+
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    padding-bottom: 10px;
+    height: 40px;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #01204e;
+}
+
+nav {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    position: sticky;
+    margin-right: 80px;
+    background-color: #f5f0e7;
+}
+
+
+nav .nav-btn {
+    background: none;
+    border: none;
+    font-size: 1rem;
+    padding: 0px;
+    cursor: pointer;
+    position: relative;
+    text-align: center;
+    display: inline-block;
+}
+
+nav .nav-btn::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 50%; /* Start at the center of the text */
+    transform: translateX(-50%); /* Adjust position to center-align */
+    height: 2px;
+    width: 0; /* Initially no width */
+    background: #90b2a2;
+    transition: width 0.3s ease;
+}
+
+nav .nav-btn.active::after {
+    width: 100%; /* Matches the length of the text */
+    left: 50%; /* Start underline at the text's beginning */
+    transform: translateX(-50%); /* Remove centering adjustments */
+}
+
+.intro {
+    display: flex;
+    align-items: left;
+    justify-content: space-between;
+    margin-top: 100px;
+    margin-left: 50px;
+    padding: 50px;
+    padding-bottom: 0px;
+    color: #01204e;
+    height: 68vh;
+    flex-direction: column;
+
+}
+
+.intro-frame {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: auto;
+    min-height: auto;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none; /* Make the SVG non-interactive */
+    z-index: -1;
+    background-size: 100vh, 100vw;
+}
+
+.line{
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: draw 4s linear forwards;
+}
+
+/* Delayed animations for each line */
+
+.line-1 {
+    animation-delay: 0s; /*cyan */
+}
+.line-2 {
+    animation-delay: 0.5s; /*yellow top */
+}
+
+.line-3 {
+    animation-delay: 0.3s; /*navy bottom */
+}
+
+.line-4 {
+    animation-delay: 0.8s; /*yellow bottom */
+}
+
+.line-5 {
+    animation-delay: 0s; /*navy top */
+}
+
+.line-6 {
+    animation-delay: 1s; /*orange top */
+}
+
+.line-7 {
+    animation-delay: 0s; /*orange bottom */
+}
+
+/* Keyframes for the drawing effect */
+@keyframes draw {
+    to {
+        stroke-dashoffset: 0; /* Reveal the stroke */
+    }
+}
+
+
+.intro-text {
+    max-width: 60%;
+}
+
+.scroll-text {
+    opacity: 1;
+    transition: opacity 0.5s ease-out;
+}
+
+.scroll-indicator {
+    display: block;
+    font-size: 1.15rem;
+    animation: bump 1.3s infinite ease-in-out;
+    opacity: 1;
+    transition: opacity 0.5s ease-out;
+}
+
+.scroll-indicator.hidden {
+    opacity: 0;
+}
+
+/* Bumping animation */
+@keyframes bump {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-6px);
+    }
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    color: #01204e;
+}
+
+p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+.works {
+    margin-top: -20px;
+    padding-top: 0px;
+    padding: 20px;
+}
+
+.works-frame {
+    position: absolute;
+    padding-top: 10px;
+    min-width: auto;
+    min-height: auto;
+    width: 100vw;
+    height: auto;
+    pointer-events: none; /* Make the SVG non-interactive */
+    z-index: -1;
+    background-size: 100vh, 100vw;
+}
+
+.works h2 {
+    font-size: 4em;
+    margin-top: 20px;
+    margin-bottom: 120px;
+    text-align: center;
+    color: #01204e;
+}
+
+.tiles {
+    display: flex;
+    margin-top: 50px;
+    gap: 115px;
+    justify-content: space-between;
+    flex-direction:column;
+    vertical-align: top;
+}
+
+.tile {
+    position: relative;
+    overflow: hidden;
+    margin: 0px 30px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+
+.individual-fade-in {
+    -webkit-transform: translateY(70px) translateZ(0);
+    transform: translateY(70px) translateZ(0);
+    -webkit-transition-delay: 1s;
+    -o-transition-delay: 1s;
+    transition-delay: 1s;
+    -webkit-transition: 1.1s;
+    -o-transition: 1.1s;
+    transition: 1.1s;
+    opacity: 0;
+
+}
+
+.scroll-fade-in {
+    -webkit-transform: translateY(50px) translateZ(0);
+    transform: translateY(50px) translateZ(0);
+    -webkit-transition-delay: 1s;
+    -o-transition-delay: 1s;
+    transition-delay: 1s;
+    -webkit-transition: 1.1s;
+    -o-transition: 1.1s;
+    transition: 1.1s;
+    opacity: 0;
+
+}
+
+.inView {
+    opacity: 1;
+    -webkit-transform: translateY(0px) rotate(0deg) translateZ(0);
+    transform: translateY(0px) rotate(0deg) translateZ(0);
+}
+
+.tile-wrapper {
+    position: relative;
+
+    width: 500px;  /* Set your desired width */
+    height: 300px; /* Set your desired height */
+    overflow: hidden; /* Hide any overflowed content (such as the zoomed image) */
+    border-radius: 15px;
+  }
+  
+  /* Make the image fill the container */
+  .image {
+    width: 100%;
+    height: 100%;
+    object-fit:cover; /* Ensures the image covers the entire container */
+    transition: transform 0.3s ease; /* Smooth zoom transition */
+  }
+  
+  /* Add text overlay */
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    opacity: 0; /* Initially hide the overlay */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.3s ease; /* Fade in effect */
+  }
+  
+  /* The text inside the overlay */
+  .overlay-text {
+    color: white;
+    font-size: 20px; /* Adjust the font size */
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+  }
+  
+  /* Hover effects */
+  .tile-wrapper:hover .image {
+    transform: scale(1.1); /* Zoom the image */
+  }
+  
+  .tile-wrapper:hover .overlay {
+    opacity: 1; /* Show the overlay with the text */
+  }
+
+
+
+.tile:nth-child(odd) {
+    flex-direction: row; /* Left-aligned for odd tiles */
+}
+
+.tile:nth-child(even) {
+    flex-direction: row-reverse; /* Right-aligned for even tiles */
+}
+
+
+.tile-text {
+    max-width: 40%;
+    padding: 20px;
+    padding-top: 5px;
+    text-align: left;
+    font-size: 1rem;
+}
+
+.tile-text h3 {
+    margin-top: 0px;
+    font-size: 1.8rem;
+}
+
+/* Fade-in Animations */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1s forwards;
+}
+
+.fade-in.delay {
+    animation-delay: 1.5s;
+}
+
+.fade-in.delay2 {
+    animation-delay: 3s;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
