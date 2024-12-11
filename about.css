@@ -96,12 +96,8 @@ footer .information {
     height: auto;
 }
 
-footer .contact-p.active::after {
-    width: 100%; /* Matches the length of the text */
-    left: 50%; /* Start underline at the text's beginning */
-    transform: translateX(-50%); /* Remove centering adjustments */
-}
-.bubble1{
+
+.footer .bubble-1 {
     position: absolute;
     display: block;
     min-width: auto;
@@ -113,6 +109,23 @@ footer .contact-p.active::after {
     background-size: 100vh, 100vw;
 }
 
+
+.contact-div:hover .bubble {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: bubble-draw 6s linear forwards;
+  }
+
+  @keyframes bubble-draw {
+    from {
+        stroke-dashoffset: 1000;
+        stroke-dasharray: 1000;
+
+    }
+    to {
+        stroke-dashoffset: 0; /* Reveal the stroke */
+    }
+}
 
 footer .contact{
     border-radius: 15px;
